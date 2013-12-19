@@ -18,6 +18,10 @@ public class Location {
 	}
 	
 	public String toString(){
+		return "("+this.chessCoordinates()+"); "+occupant.type.name+";"+occupant.team;
+	}
+	
+	public String chessCoordinates(){
 		String fileValue;
 		switch (file) {
 		case 0:
@@ -48,6 +52,6 @@ public class Location {
 			fileValue = "";
 			break;
 		}
-		return "("+fileValue+","+rank+"); "+occupant.type.name+";"+occupant.team;
+		return fileValue+(rank+1);
 	}
 }

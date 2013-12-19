@@ -14,7 +14,7 @@ public class Board {
 		for(int i = height-1; i >= 0; i--){
 			System.out.print("["+(i+1)+"]");
 			for(int j = 0; j <= width-1; j++){
-				if(squares[i][j] != null) System.out.print(" "+squares[i][j].occupant.type.shortName+" ");
+				if(squares[j][i] != null) System.out.print(" "+squares[j][i].occupant.type.shortName+" ");
 				else System.out.print(" _ ");
 			}
 			System.out.println();
@@ -30,8 +30,10 @@ public class Board {
 		}
 	}
 	
-	public void movePiece(Location from, Location to){
-		to = from;
-		from = null;
+	public void movePiece(Location from, int toX, int toY){
+		
+		this.squares[toX][toY] = new Location(toX, toY, from.occupant);
+		System.out.println(from.occupant.type.shortName+from.chessCoordinates()+" to "+squares[toX][toY].chessCoordinates());
+		this.squares[from.file][from.rank] = null;
 	}
 }
