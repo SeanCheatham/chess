@@ -58,4 +58,12 @@ public class Location {
 	public void setOccupant(Piece p){
 		occupant = p;
 	}
+	
+	public void printAllowableMoves(){
+		System.out.println("Calculating possible moves for: "+this);
+		this.occupant.calculateAttackableSquares(this);
+		for(int i=0; i<=this.occupant.attackableSquares.size()-1; i++){
+			System.out.println(this.occupant.attackableSquares.get(i).chessCoordinates());
+		}
+	}
 }

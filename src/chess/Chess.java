@@ -46,12 +46,7 @@ public class Chess {
 		b.drawBoard();*/
 		
 		//Location to check
-		Location p1 = b.squares[1][1];
-		System.out.println("Calculating possible moves for: "+p1);
-		p1.occupant.calculateAttackableSquares(b.squares[1][1]);
-		for(int i=0; i<=p1.occupant.calculateAttackableSquares(p1).size()-1; i++){
-			System.out.println(p1.occupant.calculateAttackableSquares(p1).get(i).chessCoordinates());
-		}
+		b.squares[7][6].printAllowableMoves();
 		
 	}
 }
