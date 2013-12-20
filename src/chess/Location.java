@@ -54,4 +54,8 @@ public class Location {
 		}
 		return fileValue+(rank+1);
 	}
+	
+	public void setOccupant(Piece p){
+		occupant = p;
+	}
 }

@@ -4,7 +4,6 @@ public class Type {
 	public String name;
 	public String shortName;
 	public int value;
-	public Location[] attackbleSquares;
 	
 	public Type(){
 		name = "";
