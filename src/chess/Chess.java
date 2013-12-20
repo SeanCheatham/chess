@@ -13,14 +13,14 @@ public class Chess {
 		b.squares[6][0].setOccupant(new Piece(new Type(eType.KNIGHT),0,b));
 		b.squares[7][0].setOccupant(new Piece(new Type(eType.ROOK),0,b));
 		//White's front line
-        b.squares[0][1].setOccupant(new Piece(new Type(eType.PAWN),0,b));
+        /*b.squares[0][1].setOccupant(new Piece(new Type(eType.PAWN),0,b));
         b.squares[1][1].setOccupant(new Piece(new Type(eType.PAWN),0,b));
         b.squares[2][1].setOccupant(new Piece(new Type(eType.PAWN),0,b));
         b.squares[3][1].setOccupant(new Piece(new Type(eType.PAWN),0,b));
         b.squares[4][1].setOccupant(new Piece(new Type(eType.PAWN),0,b));
         b.squares[5][1].setOccupant(new Piece(new Type(eType.PAWN),0,b));
         b.squares[6][1].setOccupant(new Piece(new Type(eType.PAWN),0,b));
-        b.squares[7][1].setOccupant(new Piece(new Type(eType.PAWN),0,b));
+        b.squares[7][1].setOccupant(new Piece(new Type(eType.PAWN),0,b));*/
 		//Black's front line
         b.squares[0][6].setOccupant(new Piece(new Type(eType.PAWN),1,b));
         b.squares[1][6].setOccupant(new Piece(new Type(eType.PAWN),1,b));
@@ -46,7 +46,7 @@ public class Chess {
 		b.drawBoard();*/
 		
 		//Location to check
-		b.squares[7][6].printAllowableMoves();
+		b.squares[0][0].printAllowableMoves();
 		
 	}
 }
