@@ -1,46 +1,54 @@
 package chess;
 
 public class Type {
-	public String name;
-	public String shortName;
-	public int value;
+	private eType name;
+	private char shortName;
+	private int value;
 	
 	public Type(){
-		name = "";
-		shortName = "*";
-		value = 0;
+		this(eType.NONE);
 	}
 	
-	public Type(String n){
-		if(n == "P") {
-			name = "Pawn";
-			value = 1;
-			shortName = n;
-		}
-		else if(n == "B") {
-			name = "Bishop";
-			value = 3;
-			shortName = n;
-		}
-		else if(n == "N") {
-			name = "Knight";
-			value = 3;
-			shortName = n;
-		}
-		else if(n == "R") {
-			name = "Rook";
-			value = 6;
-			shortName = n;
-		}
-		else if(n == "Q") {
-			name = "Queen";
-			value = 10;
-			shortName = n;
-		}
-		else if(n == "K") {
-			name = "King";
-			value = 0;
-			shortName = n;
-		}
+	public Type(eType n){
+
+        name = n;
+
+        switch(n){
+            case PAWN:
+                value = 1;
+                shortName = 'P';
+                break;
+            case BISHOP:
+                value = 3;
+                shortName = 'B';
+                break;
+            case KNIGHT:
+                value = 3;
+                shortName = 'N';
+                break;
+            case ROOK:
+                value = 6;
+                shortName = 'R';
+                break;
+            case QUEEN:
+                value = 10;
+                shortName = 'Q';
+                break;
+            case KING:
+                value = 0;
+                shortName = 'K';
+                break;
+            default:
+                value = 0;
+                shortName = '*';
+        }
 	}
+
+    public eType getType(){
+        return name;
+    }
+
+    public char getShortName(){
+        return shortName;
+    }
 }

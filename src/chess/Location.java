@@ -18,7 +18,7 @@ public class Location {
 	}
 	
 	public String toString(){
-		return "("+this.chessCoordinates()+"); "+occupant.type.name+";"+occupant.team;
+		return "("+this.chessCoordinates()+"); "+occupant.type.getType()+";"+occupant.team;
 	}
 	
 	public String chessCoordinates(){

@@ -17,7 +17,7 @@ public class Piece {
 	public ArrayList<Location> calculateAttackableSquares(Location loc){
 		ArrayList<Location> vals = new ArrayList<Location>();
 		Location currentLocation = loc;
-		if(this.type.shortName == "P"){
+		if(this.type.getType() == eType.PAWN){
 			if(this.team == 0){
 				if(currentLocation.file+1 < this.board.width-1 && currentLocation.rank+1 < this.board.height && this.board.squares[currentLocation.file+1][currentLocation.rank+1].occupant == null) vals.add(this.board.squares[currentLocation.file+1][currentLocation.rank+1]);
 				if(currentLocation.file-1 >= 0 && currentLocation.rank+1 < this.board.height && this.board.squares[currentLocation.file-1][currentLocation.rank+1].occupant == null) vals.add(this.board.squares[currentLocation.file-1][currentLocation.rank+1]);
