@@ -43,16 +43,16 @@ public class Piece {
 				}
 			}
 			for(int i = currentLocation.rank; i <= board.height-1; i++){
-				if(this.board.squares[currentLocation.file][i].occupant == null) vals.add(this.board.squares[currentLocation.file][i].occupant);
-				else if(this.board.squares[currentLocation.file][i].occupant.occupant.team != this.team){
-					vals.add(this.board.squares[currentLocation.file][i].occupant);
+				if(this.board.squares[currentLocation.file][i].occupant == null) vals.add(this.board.squares[currentLocation.file][i]);
+				else if(this.board.squares[currentLocation.file][i].occupant.team != this.team){
+					vals.add(this.board.squares[currentLocation.file][i]);
 					break;
 				}
 			}
 			for(int i = currentLocation.rank; i >= 0; i--){
-				if(this.board.squares[currentLocation.file][i].occupant == null) vals.add(this.board.squares[currentLocation.file][i].occupant);
-				else if(this.board.squares[currentLocation.file][i].occupant.occupant.team != this.team){
-					vals.add(this.board.squares[currentLocation.file][i].occupant);
+				if(this.board.squares[currentLocation.file][i].occupant == null) vals.add(this.board.squares[currentLocation.file][i]);
+				else if(this.board.squares[currentLocation.file][i].occupant.team != this.team){
+					vals.add(this.board.squares[currentLocation.file][i]);
 					break;
 				}
 			}
