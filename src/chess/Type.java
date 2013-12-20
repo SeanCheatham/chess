@@ -10,7 +10,6 @@ public class Type {
 	}
 	
 	public Type(eType n){
-
         name = n;
 
         switch(n){
@@ -50,5 +49,9 @@ public class Type {
 
     public char getShortName(){
         return shortName;
+    }
+
+    public int getValue(){
+        return value;
     }
 }
