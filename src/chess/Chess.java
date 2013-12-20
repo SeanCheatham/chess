@@ -12,24 +12,17 @@ public class Chess {
 		b.squares[5][0] = new Location(5,0,new Piece(new Type("B"),0));
 		b.squares[6][0] = new Location(6,0,new Piece(new Type("N"),0));
 		b.squares[7][0] = new Location(7,0,new Piece(new Type("R"),0));
+
 		//White's front line
-		b.squares[0][1] = new Location(0,1,new Piece(new Type("P"),0));
-		b.squares[1][1] = new Location(1,1,new Piece(new Type("P"),0));
-		b.squares[2][1] = new Location(2,1,new Piece(new Type("P"),0));
-		b.squares[3][1] = new Location(3,1,new Piece(new Type("P"),0));
-		b.squares[4][1] = new Location(4,1,new Piece(new Type("P"),0));
-		b.squares[5][1] = new Location(5,1,new Piece(new Type("P"),0));
-		b.squares[6][1] = new Location(6,1,new Piece(new Type("P"),0));
-		b.squares[7][1] = new Location(7,1,new Piece(new Type("P"),0));
+        for (int i = 0; i < 8; i++) {
+            b.squares[i][1] = new Location(i,1,new Piece(new Type("P"),0));
+        }
+
 		//Black's front line
-		b.squares[0][6] = new Location(0,6,new Piece(new Type("P"),1));
-		b.squares[1][6] = new Location(1,6,new Piece(new Type("P"),1));
-		b.squares[2][6] = new Location(2,6,new Piece(new Type("P"),1));
-		b.squares[3][6] = new Location(3,6,new Piece(new Type("P"),1));
-		b.squares[4][6] = new Location(4,6,new Piece(new Type("P"),1));
-		b.squares[5][6] = new Location(5,6,new Piece(new Type("P"),1));
-		b.squares[6][6] = new Location(6,6,new Piece(new Type("P"),1));
-		b.squares[7][6] = new Location(7,6,new Piece(new Type("P"),1));
+        for (int i = 0; i < 8; i++) {
+            b.squares[i][6] = new Location(i,6,new Piece(new Type("P"),1));
+        }
+
 		//Black's back line
 		b.squares[0][7] = new Location(0,7,new Piece(new Type("R"),1));
 		b.squares[1][7] = new Location(1,7,new Piece(new Type("N"),1));
