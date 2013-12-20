@@ -1,8 +1,9 @@
 package chess;
+
 public class Board {
-	public int height;
-	public int width;
-	public Location[][] squares;
+	private int height;
+    private int width;
+    private Location[][] squares;
 	
 	public Board(int w, int h){
 		width = w;
@@ -19,7 +20,7 @@ public class Board {
 		for(int i = height-1; i >= 0; i--){
 			System.out.print("["+(i+1)+"]");
 			for(int j = 0; j <= width-1; j++){
-				if(squares[j][i].occupant != null) System.out.print(" "+squares[j][i].occupant.type.getShortName()+" ");
+				if(squares[j][i].getOccupant() != null) System.out.print(" "+squares[j][i].getOccupant().getType().getShortName()+" ");
 				else System.out.print(" _ ");
 			}
 			System.out.println();
@@ -36,15 +37,27 @@ public class Board {
 	}
 	
 	public void movePiece(Location from, int toX, int toY){
-		this.squares[toX][toY] = new Location(toX, toY, from.occupant);
-		System.out.println(from.occupant.type.getShortName()+from.chessCoordinates()+" to "+squares[toX][toY].chessCoordinates());
-		this.squares[from.file][from.rank] = null;
+		this.squares[toX][toY] = new Location(toX, toY, from.getOccupant());
+		System.out.println(from.getOccupant().getType().getShortName()+from.chessCoordinates()+" to "+squares[toX][toY].chessCoordinates());
+		this.squares[from.getFile()][from.getRank()] = null;
 	}
-	
-/*	public Location getPieceCoordinates(Piece p){
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public Location[][] getSquares() {
+        return squares;
+    }
+
+    /*	public Location getPieceCoordinates(Piece p){
 		for(Location[] s : squares){
 			for(Location s1 : s){
-				if(s1 != null && s1.occupant == p) return s1;
+				if(s1 != null && s1.getOccupant() == p) return s1;
 			}
 		}
 		return null;

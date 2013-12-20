@@ -43,7 +43,7 @@ public class Type {
         }
 	}
 
-    public eType getType(){
+    public eType getEType(){
         return name;
     }
 

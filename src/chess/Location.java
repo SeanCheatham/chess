@@ -1,9 +1,9 @@
 package chess;
 
 public class Location {
-	public int file;
-	public int rank;
-	public Piece occupant;
+	private int file;
+    private int rank;
+    private Piece occupant;
 	
 	public Location(int x, int y) {
 		file = x;
@@ -18,7 +18,7 @@ public class Location {
 	}
 	
 	public String toString(){
-		return "("+this.chessCoordinates()+"); "+occupant.type.getType()+";"+occupant.team;
+		return "("+this.chessCoordinates()+"); "+occupant.getType().getEType()+";"+occupant.getTeam();
 	}
 	
 	public String chessCoordinates(){
@@ -62,8 +62,20 @@ public class Location {
 	public void printAllowableMoves(){
 		System.out.println("Calculating possible moves for: "+this);
 		this.occupant.calculateAttackableSquares(this);
-		for(int i=0; i<=this.occupant.attackableSquares.size()-1; i++){
-			System.out.println(this.occupant.attackableSquares.get(i).chessCoordinates());
+		for(int i=0; i<=this.occupant.getAttackableSquares().size()-1; i++){
+			System.out.println(this.occupant.getAttackableSquares().get(i).chessCoordinates());
 		}
 	}
+
+    public int getFile() {
+        return file;
+    }
+
+    public int getRank() {
+        return rank;
+    }
+
+    public Piece getOccupant() {
+        return occupant;
+    }
 }
